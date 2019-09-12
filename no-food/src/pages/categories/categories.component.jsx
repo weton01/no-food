@@ -1,5 +1,10 @@
 import React from "react";
+import Header from "../../components/header/header.component";
 
-const Categories = () => <div>Welcome to Categories page</div>;
+const Categories = () => (
+  <div>
+    <Header>asda</Header>
+  </div>
+);
 
 export default Categories;

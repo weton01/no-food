@@ -12,12 +12,12 @@ import SingleCategorie from "./pages/single-categorie/single-categorie.component
 
 // Components
 import Navbar from "./components/navbar/navbar.component";
-import DropdownCart from "./components/dropdown-cart/dropdown-cart.component";
+import Sidebar from "./components/sidebar/sidebar.component";
 
 const Routes = () => (
   <div>
     <Navbar />
-    <DropdownCart />
+    <Sidebar />
     <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/checkout" component={Checkout} />

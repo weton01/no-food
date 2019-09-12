@@ -6,8 +6,7 @@ export const NavbarCartIconContainer = styled.div`
   color: white;
   width: 55px;
   height: 35px;
-  margin-right: 10px;
-  margin-top: 5px;
+
   cursor: pointer;
 `;
 
@@ -17,24 +16,19 @@ export const CartIcon = styled(IoMdCart)`
   height: 35px;
 `;
 
-export const CartCount = styled.div`
-  position: absolute;
-  display: flex;
-  align-content: center;
-  justify-items: center;
-  border-radius: 50%;
-  background: white;
-  height: 15px;
-  width: 15px;
-  z-index: 1;
-  right: 2px;
-  top: -7px;
-`;
-
 export const Count = styled.h6`
   position: absolute;
-  top: -24.5px;
-  right: 1px;
+  top: 7px;
+  right: 20px;
   z-index: 2;
   color: black;
+  user-select: none; /* supported by Chrome and Opera */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+
+  @media (max-width: 768px) {
+    top: 5px;
+  }
 `;
