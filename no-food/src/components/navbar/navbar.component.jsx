@@ -7,6 +7,7 @@ import { createStructuredSelector } from "reselect";
 import Logo from "../../assets/images/img-1.png";
 import NavbarCartIcon from "../navbar-cart-icon/navbar-cart-icon.component";
 import DropdownCart from "../dropdown-cart/dropdown-cart.component";
+import NavbarUserIcon from "../navbar-user-icon/navbar-user-icon.component";
 import { selectCartHidden } from "../../redux/cart/cart-selectors";
 import { toggleSidebarHidden } from "../../redux/navbar/navbar-actions";
 import { cartHidden } from "../../redux/cart/cart-actions";
@@ -46,9 +47,7 @@ const Navbar = ({ hidden, dispatch }) => (
           </Link>
         </NavbarContent>
         <NavbarContent>
-          <Link to="/signin">
-            <Content style={{ marginRight: "0px" }}>Registro</Content>
-          </Link>
+          <NavbarUserIcon></NavbarUserIcon>
         </NavbarContent>
       </NavbarContentContainer>
       <div>

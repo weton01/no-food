@@ -2,11 +2,37 @@ import styled, { css } from "styled-components";
 
 const subColor = "white";
 const mainColor = "white";
+const secondaryColor = "black";
+const secondarySubColor = "black";
 
 const shrinkLabelStyles = css`
   top: -12px;
   font-size: 12px;
   color: ${mainColor};
+`;
+
+const secondShrinkLabelStyles = css`
+  top: -12px;
+  font-size: 12px;
+  color: ${secondaryColor};
+`;
+
+const formInputContainer = css`
+  color: ${subColor};
+  border-bottom: 1px solid ${subColor};
+`;
+
+const secondaryFormInputContainer = css`
+  color: ${secondarySubColor};
+  border-bottom: 1px solid ${secondarySubColor};
+`;
+
+const formInput = css`
+  color: ${subColor};
+`;
+
+const secondaryFormInputs = css`
+  color: ${secondarySubColor};
 `;
 
 export const GroupContainer = styled.div`
@@ -18,30 +44,44 @@ export const GroupContainer = styled.div`
   }
 `;
 
+const getFormInputLabelStyles = props => {
+  if (props.secondaryFormInput) return secondShrinkLabelStyles;
+  return shrinkLabelStyles;
+};
+
+const getFormInputContainerStyles = props => {
+  if (props.secondaryFormInput) return secondaryFormInputContainer;
+  return formInputContainer;
+};
+
+const getFormInputStyles = props => {
+  if (props.secondaryFormInput) return secondaryFormInputs;
+  return formInput;
+};
+
 export const FormInputContainer = styled.input`
   background: none;
   background-color: transparent;
-  color: ${subColor};
   font-size: 18px;
   padding: 10px 10px 10px 5px;
   display: block;
   width: 100%;
   border: none;
   border-radius: 0;
-  border-bottom: 1px solid ${subColor};
   margin: 25px 0;
+
+  ${getFormInputContainerStyles}
 
   &:focus {
     outline: none;
   }
 
   &:focus ~ label {
-    ${shrinkLabelStyles}
+    ${getFormInputLabelStyles}
   }
 `;
 
 export const FormInputLabel = styled.label`
-  color: ${subColor};
   font-size: 16px;
   font-weight: normal;
   position: absolute;
@@ -49,8 +89,9 @@ export const FormInputLabel = styled.label`
   left: 5px;
   top: 10px;
   transition: 300ms ease all;
+  ${getFormInputStyles}
 
   &.shrink {
-    ${shrinkLabelStyles}
+    ${getFormInputLabelStyles}
   }
 `;

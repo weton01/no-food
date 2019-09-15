@@ -1,10 +1,16 @@
 import React from "react";
+
 import Header from "../../components/header/header.component";
+import SignIn from "../../components/sign-in/sign-in.component";
 
 const SignInPage = () => (
-  <div>
-    <Header>asda</Header>
-  </div>
+  <>
+    <Header>
+      <h1>Registro</h1>
+    </Header>
+
+    <SignIn />
+  </>
 );
 
 export default SignInPage;

@@ -17,3 +17,17 @@ export const LoggedUserContainer = styled.div`
     text-align: center;
   }
 `;
+
+export const ImageContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 35px;
+`;
+
+export const Image = styled.img`
+  width: 250px;
+  height: 250px;
+  border: 3px solid white;
+  border-radius: 3px;
+`;

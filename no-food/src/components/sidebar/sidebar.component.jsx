@@ -1,9 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
+import { Link } from "react-router-dom";
 
 import { toggleSidebarHidden } from "../../redux/navbar/navbar-actions";
 import { selectNavbarHidden } from "../../redux/navbar/navbar-selectors";
+import NavbarUserIcon from "../navbar-user-icon/navbar-user-icon.component";
+
 import {
   SidebarContainer,
   SidebarContent,
@@ -18,16 +21,24 @@ const Sidebar = ({ hidden, toggleSidebarHidden }) => {
         <CloseButtonContainer>
           <CloseButton onClick={toggleSidebarHidden} />
         </CloseButtonContainer>
-        <SidebarContent>Home</SidebarContent>
-        <SidebarContent>Categorias</SidebarContent>
-        <SidebarContent>Registro</SidebarContent>
+        <Link to="/">
+          <SidebarContent onClick={toggleSidebarHidden}>Home</SidebarContent>
+        </Link>
+        <Link to="/categories">
+          <SidebarContent onClick={toggleSidebarHidden}>
+            Categorias
+          </SidebarContent>
+        </Link>
+        <div onClick={toggleSidebarHidden}>
+          <NavbarUserIcon isSidebar />
+        </div>
       </div>
     </SidebarContainer>
   ) : null;
 };
 
 const mapDispatchToProps = dispatch => ({
-  toggleSidebarHidden: item => dispatch(toggleSidebarHidden())
+  toggleSidebarHidden: item => dispatch(toggleSidebarHidden(item))
 });
 
 const mapStateToProps = createStructuredSelector({

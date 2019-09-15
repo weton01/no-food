@@ -58,6 +58,7 @@ export const SidebarContent = styled.h2`
   letter-spacing: 3px;
   cursor: pointer;
   margin-bottom: 10px;
+  color: white;
   &:hover {
     color: yellow;
     transition: 0.6s linear;

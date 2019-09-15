@@ -4,6 +4,7 @@ import { createStructuredSelector } from "reselect";
 
 import { setCurrentUser } from "../../redux/user/user.actions";
 import { selectCurrentUser } from "../../redux/user/user.selectors";
+import { Link } from "react-router-dom";
 
 import Icon from "../../assets/icons/icon-1.png";
 import CustomButton from "../../components/custom-button/custom-button.component";
@@ -34,15 +35,14 @@ const Home = ({ setCurrentUser, currentUser }) => {
       senha: values.password
     };
 
-    let response = await api
-      .post("/api/usuario/autenticar", user)
-      .catch(error => {
-        response = error;
-      });
+    try {
+      let response = await api.post("/api/usuario/autenticar", user);
+      let currentUser = response.data;
 
-    let currentUser = response.data;
-
-    setCurrentUser(currentUser);
+      setCurrentUser(currentUser);
+    } catch (err) {
+      console.error(err.response.data);
+    }
   };
 
   return (
@@ -70,7 +70,11 @@ const Home = ({ setCurrentUser, currentUser }) => {
           </div>
           <ButtonContainer>
             <CustomButton type="submit">Efetuar Login</CustomButton>
-            <CustomButton btnSecondary>Cadastre-se</CustomButton>
+            <Link to="/signin">
+              <CustomButton type="button" btnSecondary>
+                Cadastre-se
+              </CustomButton>
+            </Link>
           </ButtonContainer>
         </LoginContainer>
       ) : (
