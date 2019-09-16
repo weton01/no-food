@@ -5,7 +5,8 @@ export const HomeContainer = styled.form`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+
   max-height: 100%;
   padding-top: 55px;
   background-size: cover;
@@ -30,6 +31,9 @@ export const LoginContainer = styled.div`
   flex-direction: column;
   align-items: center;
   padding-top: 60px;
+  height: 100%;
+
+  margin-bottom: 20px;
 `;
 
 export const ButtonContainer = styled.div`

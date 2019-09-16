@@ -3,9 +3,10 @@ import { IoMdClose } from "react-icons/io";
 
 export const SidebarContainer = styled.div`
   display: none;
-  position: absolute;
-  width: 100%;
-  height: calc(100% + 56px);
+  position: fixed;
+  width: calc(100%);
+  min-height: 100%;
+  max-height: 100%;
   color: white;
   user-select: none; /* supported by Chrome and Opera */
   -webkit-user-select: none; /* Safari */
