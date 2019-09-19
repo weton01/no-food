@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 const btnPrimary = css`
-  background: yellow;
+  background: #ffd300;
   border: 0px;
   color: rgb(183, 28, 28);
 
@@ -34,6 +34,11 @@ export const CustomButtonContainer = styled.button`
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
+  user-select: none; /* supported by Chrome and Opera */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
 
   ${getButtonStyles}
 `;

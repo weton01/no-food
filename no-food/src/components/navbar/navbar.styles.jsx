@@ -57,6 +57,7 @@ export const NavbarLogo = styled.img`
   height: 40px;
   width: 150px;
   margin-bottom: 4px;
+  margin-left: 22px;
 
   @media (max-width: 768px) {
     height: 35px;

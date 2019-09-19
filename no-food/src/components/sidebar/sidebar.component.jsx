@@ -22,7 +22,7 @@ const Sidebar = ({ hidden, toggleSidebarHidden }) => {
           <CloseButton onClick={toggleSidebarHidden} />
         </CloseButtonContainer>
         <Link to="/">
-          <SidebarContent onClick={toggleSidebarHidden}>Home</SidebarContent>
+          <SidebarContent onClick={toggleSidebarHidden}>Inicio</SidebarContent>
         </Link>
         <Link to="/categories">
           <SidebarContent onClick={toggleSidebarHidden}>

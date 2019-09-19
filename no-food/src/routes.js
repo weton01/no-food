@@ -7,7 +7,6 @@ import { connect } from "react-redux";
 import Categories from "./pages/categories/categories.component";
 import Checkout from "./pages/checkout/checkout.component";
 import Home from "./pages/home/home.component";
-import LoginPage from "./pages/login-page/login-page.component";
 import MyAccount from "./pages/my-account/my-account.component";
 import SignInPage from "./pages/sign-in-page/sign-in-page.component";
 import SingleCategorie from "./pages/single-categorie/single-categorie.component";
@@ -24,10 +23,10 @@ const Routes = ({ currentUser }) => (
   <>
     <Navbar />
     <Sidebar />
+
     <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/checkout" component={Checkout} />
-      <Route exact path="/login" component={LoginPage} />
       <Route exact path="/account" component={MyAccount} />
       <Route
         exact

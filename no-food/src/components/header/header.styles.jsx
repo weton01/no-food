@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const HeaderContainer = styled.div`
+export const HeaderContainer = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,6 +10,11 @@ export const HeaderContainer = styled.div`
 
   & h1 {
     font-size: 45px;
+    color: white;
+    font-family: "Titillium Web", sans-serif;
+  }
+
+  & h3 {
     color: white;
     font-family: "Titillium Web", sans-serif;
   }
