@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { IoIosRemoveCircleOutline } from "react-icons/io";
+import { IoMdClose } from "react-icons/io";
 
 export const CheckoutItemContainer = styled.li`
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -47,7 +49,12 @@ export const IconButton = styled.div`
   width: 25px;
   height: 35px;
   margin: 10px;
-  color: rgb(183, 28, 28);
+  color: #1a1a1a;
+  cursor: pointer;
+
+  &:hover {
+    color: rgb(183, 28, 28);
+  }
 `;
 
 export const AddItemIcon = styled(IoIosAddCircleOutline)`
@@ -81,4 +88,17 @@ export const PriceItemContainer = styled.h4`
   font-family: "Eczar", serif;
   font-weight: regular;
   color: #1a1a1a;
+`;
+
+export const RemoveItemButton = styled(IoMdClose)`
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: 5px;
+  top: 5px;
+  cursor: pointer;
+
+  &:hover {
+    color: rgb(183, 28, 28);
+  }
 `;

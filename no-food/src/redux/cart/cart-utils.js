@@ -20,7 +20,7 @@ export const removeItemFromCart = (cartItems, cartItemFromRemove) => {
   );
 
   if (existingCartItem.quantity === 1) {
-    return cartItems.find(item => item._id !== cartItemFromRemove._id);
+    return cartItems.filter(item => item._id !== cartItemFromRemove._id);
   }
 
   if (existingCartItem) {
